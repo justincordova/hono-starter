@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: hono-starter
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    restart: unless-stopped
